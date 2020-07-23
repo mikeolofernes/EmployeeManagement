@@ -5,13 +5,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace EmployeeManagementSystem.Data.Models
 {
-    public class Sites
+    public class Locations
     {
 
         #region Constructor
-        public Sites()
+        public Locations()
         {
 
         }
@@ -21,13 +22,13 @@ namespace EmployeeManagementSystem.Data.Models
 
         [Key]
         [Required]
-        public int SiteId { get; set; }
+        public int LocationId { get; set; }
         [Column(TypeName = "nvarchar(50)")]
-        public string SiteCode { get; set; }
+        public string LocationCode { get; set; }
         [Column(TypeName = "nvarchar(250)")]
-        public string SiteDescription { get; set; }
+        public string LocationDescription { get; set; }
         [Column(TypeName = "nvarchar(50)")]
-        public string SiteStatus { get; set; }
+        public string LocationStatus { get; set; }
         public int CreatedBy { get; set; }
         public int UpdatedBy { get; set; }
         [Column(TypeName = "datetime")]
@@ -36,17 +37,9 @@ namespace EmployeeManagementSystem.Data.Models
         public DateTime UpdateDate { get; set; }
         #endregion
 
-        #region
-        //Not mapped fields on DB
-        [NotMapped]
-        public string CreatedByName { get; set; }
-        [NotMapped]
-        public string UpdatedByName { get; set; }
-        #endregion
-
         #region Navigation Properties
 
-        //public virtual List<Locations> Locations { get; set; }
+        //public virtual Sites Sites { get; set; }
         #endregion
 
     }

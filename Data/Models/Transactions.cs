@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace EmployeeManagementSystem.Data.Models
 {
-    public class Sites
+    public class Transactions
     {
 
         #region Constructor
-        public Sites()
+        public Transactions()
         {
 
         }
@@ -21,13 +21,17 @@ namespace EmployeeManagementSystem.Data.Models
 
         [Key]
         [Required]
-        public int SiteId { get; set; }
-        [Column(TypeName = "nvarchar(50)")]
-        public string SiteCode { get; set; }
+        public int TransactionId { get; set; }
+        public Int64 EmployeeId { get; set; }
+        public string TransactionTypeId { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal TransactionAmount { get; set; }
         [Column(TypeName = "nvarchar(250)")]
-        public string SiteDescription { get; set; }
+        public string Notes { get; set; }
         [Column(TypeName = "nvarchar(50)")]
-        public string SiteStatus { get; set; }
+        public string Status { get; set; }
+        [Column(TypeName = "datetime")]
+        public DateTime TransactionDate { get; set; }
         public int CreatedBy { get; set; }
         public int UpdatedBy { get; set; }
         [Column(TypeName = "datetime")]
@@ -36,17 +40,9 @@ namespace EmployeeManagementSystem.Data.Models
         public DateTime UpdateDate { get; set; }
         #endregion
 
-        #region
-        //Not mapped fields on DB
-        [NotMapped]
-        public string CreatedByName { get; set; }
-        [NotMapped]
-        public string UpdatedByName { get; set; }
-        #endregion
-
         #region Navigation Properties
 
-        //public virtual List<Locations> Locations { get; set; }
+        //public virtual TransactionTypes TransactionTypes { get; set; }
         #endregion
 
     }

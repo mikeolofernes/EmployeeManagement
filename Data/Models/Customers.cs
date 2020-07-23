@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace EmployeeManagementSystem.Data.Models
 {
-    public class Sites
+    public class Customers
     {
 
         #region Constructor
-        public Sites()
+        public Customers()
         {
 
         }
@@ -21,27 +21,25 @@ namespace EmployeeManagementSystem.Data.Models
 
         [Key]
         [Required]
-        public int SiteId { get; set; }
+        public int CustomerId { get; set; }
+
         [Column(TypeName = "nvarchar(50)")]
-        public string SiteCode { get; set; }
-        [Column(TypeName = "nvarchar(250)")]
-        public string SiteDescription { get; set; }
+        public string CustomerCode { get; set; }
         [Column(TypeName = "nvarchar(50)")]
-        public string SiteStatus { get; set; }
+        public string CustomerDescription { get; set; }
+        [Column(TypeName = "nvarchar(50)")]
+        public string ContactPerson { get; set; }
+        [Column(TypeName = "nvarchar(50)")]
+        public string ContactNumber { get; set; }
+        [Column(TypeName = "nvarchar(50)")]
+        public string CustomerStatus { get; set; }
+
         public int CreatedBy { get; set; }
         public int UpdatedBy { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime CreatedDate { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime UpdateDate { get; set; }
-        #endregion
-
-        #region
-        //Not mapped fields on DB
-        [NotMapped]
-        public string CreatedByName { get; set; }
-        [NotMapped]
-        public string UpdatedByName { get; set; }
         #endregion
 
         #region Navigation Properties

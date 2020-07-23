@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace EmployeeManagementSystem.Data.Models
 {
-    public class Sites
+    public class EmployeeACRID
     {
 
         #region Constructor
-        public Sites()
+        public EmployeeACRID()
         {
 
         }
@@ -21,13 +21,20 @@ namespace EmployeeManagementSystem.Data.Models
 
         [Key]
         [Required]
-        public int SiteId { get; set; }
+        public int ACRId { get; set; }
+
+        public Int64 EmployeeId { get; set; }
         [Column(TypeName = "nvarchar(50)")]
-        public string SiteCode { get; set; }
-        [Column(TypeName = "nvarchar(250)")]
-        public string SiteDescription { get; set; }
+        public string ACRNumber { get; set; }
+        [Column(TypeName = "datetime")]
+        public DateTime ACRIssuedDate { get; set; }
+        [Column(TypeName = "datetime")]
+        public DateTime ACRValidDate { get; set; }
+        [Column(TypeName = "datetime")]
+        public DateTime ACRCancelledDate { get; set; }
         [Column(TypeName = "nvarchar(50)")]
-        public string SiteStatus { get; set; }
+        public string ACRStatus { get; set; }
+        public string ACRImage { get; set; }
         public int CreatedBy { get; set; }
         public int UpdatedBy { get; set; }
         [Column(TypeName = "datetime")]
@@ -36,17 +43,9 @@ namespace EmployeeManagementSystem.Data.Models
         public DateTime UpdateDate { get; set; }
         #endregion
 
-        #region
-        //Not mapped fields on DB
-        [NotMapped]
-        public string CreatedByName { get; set; }
-        [NotMapped]
-        public string UpdatedByName { get; set; }
-        #endregion
-
         #region Navigation Properties
 
-        //public virtual List<Locations> Locations { get; set; }
+        //public virtual EmployeeInfo EmployeeInfo { get; set; }
         #endregion
 
     }
