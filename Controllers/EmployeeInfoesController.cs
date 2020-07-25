@@ -24,12 +24,12 @@ namespace EmployeeManagement.Controllers
             return View(await _context.EmployeeInfo.ToListAsync());
         }
 
-        public IActionResult AddOrEdit(int id = 0)
+        public IActionResult AddOrEdit(Int64 id = 0)
         {
             if (id == 0)
-                return View(new Locations());
+                return View(new EmployeeInfo());
             else
-                return View(_context.Locations.Find(id));
+                return View(_context.EmployeeInfo.Find(id));
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
