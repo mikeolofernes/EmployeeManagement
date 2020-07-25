@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using EmployeeManagementSystem.Data.Models;
+using EmployeeManagement.Data.Models;
 
 namespace EmployeeManagementSystem.Data.Models
 {
@@ -41,7 +42,8 @@ namespace EmployeeManagementSystem.Data.Models
             modelBuilder.Entity<Sites>().ToTable("Sites");
             modelBuilder.Entity<Transactions>().ToTable("Transactions");
             modelBuilder.Entity<TransactionTypes>().ToTable("TransactionTypes");
-
+            modelBuilder.Entity<Roles>().ToTable("Roles");
+            modelBuilder.Entity<Users>().ToTable("Users");
         }
         #endregion Methods
         #region Properties
@@ -66,8 +68,8 @@ namespace EmployeeManagementSystem.Data.Models
         public DbSet<Sites> Sites { get; set; }
         public DbSet<Transactions> Transactions { get; set; }
         public DbSet<TransactionTypes> TransactionTypes { get; set; }
-
-
+        public DbSet<Roles> Roles { get; set; }
+        public DbSet<Users> Users { get; set; }
 
         #endregion Properties
     }
