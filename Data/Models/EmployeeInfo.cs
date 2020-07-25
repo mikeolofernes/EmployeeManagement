@@ -122,6 +122,14 @@ namespace EmployeeManagementSystem.Data.Models
         public DateTime UpdateDate { get; set; }
         #endregion
 
+        #region
+        //Not mapped fields on DB
+        [NotMapped]
+        public string SiteName { get; set; }
+        [NotMapped]
+        public string LocationName { get; set; }
+        #endregion
+
         #region Navigation Properties
 
         //public virtual List<EmployeePassport> EmployeePassport { get; set; }
